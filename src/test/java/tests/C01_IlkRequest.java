@@ -9,6 +9,11 @@ public class C01_IlkRequest {
     @Test
     public void test01(){
 
+        // 1- Request yollayabilmek icin endpoint ve gerekiyorsa request body hazirlayin
+        // 2- Soruda verilmisse expected response'i kodlarimizda olusturalim
+        // 3- Request'i gonderip, donen response'i kaydedelim
+        // 4- Istenen testleri yap
+
         //  https://restful-booker.herokuapp.com/booking/10 url’ine
         //  bir GET request gonderdigimizde donen Response’u yazdirin.
 

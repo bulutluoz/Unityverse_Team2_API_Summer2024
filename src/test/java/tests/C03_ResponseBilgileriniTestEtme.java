@@ -26,6 +26,7 @@ public class C03_ResponseBilgileriniTestEtme {
                                 when().
                                 get(endpoint);
 
+        response.prettyPrint();
 
         // 4- Istenen testleri yap
 
