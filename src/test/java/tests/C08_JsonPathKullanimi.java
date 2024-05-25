@@ -36,8 +36,43 @@ public class C08_JsonPathKullanimi {
         kisiBilgileriJsonObj.put("phoneNumbers",telefonBilgileriArr);
 
 
+        System.out.println(kisiBilgileriJsonObj);
+
+        /*
+                {
+                    "firstName":"John",
+                    "lastName":"Doe",
+                    "address":{
+                        "streetAddress":"naist street",
+                        "city":"Nara",
+                        "postalCode":"630-0192"
+                        },
+                     "age":26,
+                     "phoneNumbers":
+                        [
+                          {
+                           "number":"0123-4567-8888",
+                           "type":"iPhone"
+                           },
+                          {
+                            "number":"0123-4567-8910",
+                            "type":"home"
+                            }
+                          ]
+                     }
+         */
+        // kisisel bilgilerde olan cep telefonu numarasini yazdirin
+        System.out.println(kisiBilgileriJsonObj.getJSONArray("phoneNumbers").getJSONObject(0).getString("number"));
+
+        // kisisel bilgilerde olan city'i yazdirin
+        System.out.println(kisiBilgileriJsonObj.getJSONObject("address").getString("city")); // Nara
 
 
+        // kisisel bilgilerde olan age'i yazdirin
+        System.out.println(kisiBilgileriJsonObj.getInt("age")); // 26
+
+        // kisisel bilgilerde olan firstname'i yazdirin
+        System.out.println(kisiBilgileriJsonObj.getString("firstName")); // John
 
     }
 }
