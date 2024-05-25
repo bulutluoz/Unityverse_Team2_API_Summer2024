@@ -7,6 +7,8 @@ import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.*;
+
 public class C07_Post_ResponseBodyTestEtme {
 
     @Test
@@ -71,5 +73,20 @@ public class C07_Post_ResponseBodyTestEtme {
                 .body("title", Matchers.equalTo("API"))
                 .body("userId",Matchers.lessThan(100))
                 .body("body",Matchers.containsString("API"));
+
+
+        // Eger body'deki degerleri test ederken
+        // her seferinde .body ile baslamak ve Matchers. yazmak istemezseniz
+        // bunlari asagidaki gibi de yazabiliriz
+
+        actualResponse
+                .then()
+                .assertThat()
+                .statusCode(201)
+                .contentType(ContentType.JSON)
+                .body("title", equalTo("API"),
+                        "userId",lessThan(100),
+                        "body",containsString("API"));
+
     }
 }
